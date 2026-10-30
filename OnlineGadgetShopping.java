@@ -141,15 +141,7 @@ static Scanner sc = new Scanner(System.in);
 
     static void updateGadget(Connection con)
             throws SQLException {
-        viewGadgets(con); 
-         String sql2 = "SELECT id, name FROM products";
-          Statement st = con.createStatement();
-             ResultSet rs = st.executeQuery(sql2);
-
-while (rs.next()) {
-    System.out.println("Product ID: " + rs.getInt("id")
-            + " | Product Name: " + rs.getString("name"));
-}
+              viewGadgets(con); 
           
         int id = readInt("Enter gadget ID to update: ");
 
@@ -182,14 +174,7 @@ while (rs.next()) {
     }
     static void deleteGadget(Connection con)
             throws SQLException {
-            String sql3 = "SELECT id, name FROM products";
-Statement st = con.createStatement();
-ResultSet rs = st.executeQuery(sql3);
-
-while (rs.next()) {
-    System.out.println("Product ID: " + rs.getInt("id")
-            + " | Product Name: " + rs.getString("name"));
-}
+            viewGadgets(con); 
         int id = readInt("Enter gadget ID to delete: ");
 
         String sql = "DELETE FROM products WHERE id = ?";
